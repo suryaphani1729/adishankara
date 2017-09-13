@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Adi Shankara</title>
+<link rel="manifest" href="./adishankara/manifest.webapp">
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <link rel="stylesheet" href="material.css">
 <script src="material.js"></script>
@@ -46,30 +47,22 @@
   </div>
 </div>
 
+	
+	
+	
 <script>
 
-var app = angular.module('devotionalApp', []).controller("appCtrl",function($scope){
+ if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('./adishankara/service-worker.js')
+             .then(function() { console.log('Service Worker Registered'); });
+  }	
+	
+	
+	
+	
 
-	$scope.data = {};
-	$scope.slokas = [{"title":"Loading...","descr" : "..."}];
-   $scope.getData = function(){ 
-   firebase.database().ref('/ShankaraProject').once('value').then(function(snapshot) {
-       $scope.data = snapshot.val();
-        
-		$scope.slokas = $scope.data.data1;
-		console.log($scope.slokas);
-		$scope.$apply();
-		
-		
-   });
-      
-    
-   }
-
-  $scope.getData();
-
-
-});  
 </script>
+	<script src="main.js" />
 </body>
 </html>
