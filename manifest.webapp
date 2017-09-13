@@ -1,0 +1,11 @@
+{
+  "name": "Adi Shankaracharya Slokas",
+  "short_name": "Adishankara",
+  "icons": [
+  ],
+  "theme_color": "#000000",
+  "background_color": "#e0e0e0",
+  "start_url": "/adishankara/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
