@@ -1,9 +1,15 @@
-var cacheName = 'adishankaraCache-1';
+var cacheName = 'adishankaraCache-2';
 var filesToCache = [
    '/adishankara/',
   '/adishankara/index.html',
   '/adishankara/main.js',
+   'https://www.gstatic.com/firebasejs/4.2.0/firebase.js',
+   '/adishankara/material.css',
+   '/adishankara/material.js',
+   '/adishankara/angular.js'
 ];
+
+
 
 self.addEventListener('install', function(e) {
   console.log('[ServiceWorker] Install');
