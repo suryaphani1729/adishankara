@@ -1,4 +1,4 @@
-var cacheName = 'adishankaraCache-2';
+var cacheName = 'adishankaraCache-3';
 var filesToCache = [
    '/adishankara/',
   '/adishankara/index.html',
