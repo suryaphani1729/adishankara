@@ -1,9 +1,9 @@
-var cacheName = 'adishankaraCache-3';
+var cacheName = 'adishankaraCache-4';
 var filesToCache = [
    '/adishankara/',
   '/adishankara/index.html',
   '/adishankara/main.js',
-   'https://www.gstatic.com/firebasejs/4.2.0/firebase.js',
+   '/adishankara/firebase.js',
    '/adishankara/material.css',
    '/adishankara/material.js',
    '/adishankara/angular.js'
