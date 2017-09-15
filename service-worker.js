@@ -42,7 +42,7 @@ self.addEventListener('activate', function(e) {
 });
 
 self.addEventListener('fetch', function(e) {
-  console.log('[ServiceWorker] Fetch', e.request.url+"/"+config.databaseURL);
+  console.log('[ServiceWorker] Fetch', e.request.url);
    var dataUrl = "https://test-250316.firebaseio.com";
    
    if (e.request.url.indexOf(dataUrl) > -1) {
