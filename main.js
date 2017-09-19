@@ -27,7 +27,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
        * data while the app fetches the latest data.
        */
 	    console.log("************-yes cache");
-      caches.match("https://test-250316.firebaseio.com").then(function(response) {
+      caches.match("https://suryaphani1729.github.io/adishankara/").then(function(response) {
 	      
 	      console.log("************");
 		console.log(response);
