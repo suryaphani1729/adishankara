@@ -1,4 +1,4 @@
-var cacheName = 'adishankaraCache-7';
+var cacheName = 'adishankaraCache-8';
 var dataCacheName = 'slokaData-v1';
 
 
@@ -44,7 +44,8 @@ self.addEventListener('activate', function(e) {
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
    var dataUrl = "https://test-250316.firebaseio.com";
-   
+   console.log("----------");
+   console.log(e);
    if (e.request.url.indexOf(dataUrl) > -1) {
     /*
      * When the request URL contains dataUrl, the app is asking for fresh
