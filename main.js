@@ -26,6 +26,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
        * data. If the service worker has the data, then display the cached
        * data while the app fetches the latest data.
        */
+	    console.log("************-yes cache");
       caches.match("https://test-250316.firebaseio.com").then(function(response) {
         if (response) {
           response.json().then(function updateFromCache(json) {
