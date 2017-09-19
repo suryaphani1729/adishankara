@@ -1,4 +1,4 @@
-var cacheName = 'adishankaraCache-5';
+var cacheName = 'adishankaraCache-6';
 var dataCacheName = 'slokaData-v1';
 
 
