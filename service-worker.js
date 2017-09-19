@@ -53,6 +53,8 @@ self.addEventListener('fetch', function(e) {
      * network" strategy:
      * https://jakearchibald.com/2014/offline-cookbook/#cache-then-network
      */
+      
+      console.log("fetching from if");
     e.respondWith(
       caches.open(dataCacheName).then(function(cache) {
         return fetch(e.request).then(function(response){
@@ -67,6 +69,7 @@ self.addEventListener('fetch', function(e) {
      * "Cache, falling back to the network" offline strategy:
      * https://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network
      */
+      console.log("fetching from else");
     e.respondWith(
       caches.match(e.request).then(function(response) {
         return response || fetch(e.request);
