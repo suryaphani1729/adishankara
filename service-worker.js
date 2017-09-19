@@ -43,7 +43,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
-   var dataUrl = "https://suryaphani1729.github.io/adishankara/";
+   var dataUrl = "https://test-250316.firebaseio.com";
    console.log("----------");
    console.log(e);
    if (e.request.url.indexOf(dataUrl) > -1) {
