@@ -1,4 +1,4 @@
-var cacheName = 'adishankaraCache-8';
+var cacheName = 'adishankaraCache-9';
 var dataCacheName = 'slokaData-v1';
 
 
@@ -43,7 +43,7 @@ self.addEventListener('activate', function(e) {
 
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
-   var dataUrl = "https://test-250316.firebaseio.com";
+   var dataUrl = "https://suryaphani1729.github.io/adishankara/";
    console.log("----------");
    console.log(e);
    if (e.request.url.indexOf(dataUrl) > -1) {
