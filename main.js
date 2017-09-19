@@ -29,6 +29,9 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 	    console.log("************-yes cache");
       caches.match("https://test-250316.firebaseio.com").then(function(response) {
         if (response) {
+		console.log("************");
+		console.log(response);
+		
           response.json().then(function updateFromCache(json) {
            
 		  console.log("************"+json);
