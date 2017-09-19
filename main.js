@@ -10,12 +10,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		$scope.slokas = $scope.data.data1;
 		
 	   
-	caches.open('slokaData-v1').then(function(cache) {
-			cache.put("https://test-250316.firebaseio.com",$scope.slokas );
-			console.log('[ServiceWorker] Fetched&Cached Data');
-        
-    	  });
-    
+	
 
 
 	   
