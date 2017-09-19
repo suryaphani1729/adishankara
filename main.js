@@ -10,7 +10,9 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		$scope.slokas = $scope.data.data1;
 		
 	   
-	
+	caches.open('slokaData-v1').then(function(cache) {
+		cache.add($scope.slokas);
+	});
 
 
 	   
