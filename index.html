@@ -76,8 +76,8 @@ function showNotification() {
   Notification.requestPermission(function(result) {
     if (result === 'granted') {
       navigator.serviceWorker.ready.then(function(registration) {
-        registration.showNotification('Vibration Sample', {
-          body: 'Buzz! Buzz!',
+        registration.showNotification('Welcome to our site', {
+          body: 'This is just a notification',
          
           vibrate: [200, 100, 200, 100, 200, 100, 200],
           tag: 'vibration-sample'
