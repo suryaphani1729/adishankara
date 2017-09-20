@@ -94,3 +94,13 @@ self.addEventListener('push', function(event) {
    self.registration.showNotification(payload.title, payload.options)
  );
 });
+
+// Event Listener for notification click
+self.addEventListener('notificationclick', function(event) {
+
+ event.notification.close();
+
+ event.waitUntil(
+   clients.openWindow(<URL>)
+ );
+});
