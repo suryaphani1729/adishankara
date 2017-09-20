@@ -64,31 +64,81 @@
 	
 	
 <script>
-
+var storage = window.localStorage;
+var registration;	
  if ('serviceWorker' in navigator) {
     navigator.serviceWorker
              .register('./service-worker.js')
-             .then(function() { console.log('Service Worker Registered'); });
+             .then(function(reg) {  registration = reg;   console.log('Service Worker Registered'); });
   }	
+	
+//post subscribe object	
+function postSubscribeObj(statusType, subscription) {
+   // Send the information to the server with fetch API.
+   // the type of the request, the name of the user subscribing,
+   // and the push subscription endpoint + key the server needs
+   // to send push messages
+
+   var subscription = subscription.toJSON();
+   // API call to store the endpoint in the database  
+   console.log("XXXXXXXXXXXXX");
+   console.log(subscription);
+ }
+	
+	
+	
+	//for subscribing pushnotification manager
+	
+function subscribe() {
+   registration.pushManager.getSubscription().then(
+       function(existing_subscription) {
+         // Check if Subscription is available
+         if (existing_subscription) {
+           endpoint = existing_subscription.toJSON()['endpoint']
+           if (storage.getItem(endpoint) === 'failed') {
+             postSubscribeObj('subscribe', existing_subscription);
+           }
+           return existing_subscription;
+         }
+         // If not, register one using the
+         // registration object we got when
+         // we registered the service worker
+         registration.pushManager.subscribe({
+           userVisibleOnly: true
+         }).then(
+           function(new_subscription) {
+             postSubscribeObj('subscribe', new_subscription);
+           }
+         );
+       }
+     )
+ }
+	
+	
 	
 	
 function showNotification() {
   Notification.requestPermission(function(result) {
     if (result === 'granted') {
-      navigator.serviceWorker.ready.then(function(registration) {
-        registration.showNotification('Welcome to our site', {
-          body: 'This is just a notification',
-         
-          vibrate: [200, 100, 200, 100, 200, 100, 200],
-          tag: 'vibration-sample'
-        });
-      });
+	    
+		subscribe();
+	    
+			    /*  navigator.serviceWorker.ready.then(function(registration) {
+				registration.showNotification('Welcome to our site', {
+				  body: 'This is just a notification',
+
+				  vibrate: [200, 100, 200, 100, 200, 100, 200],
+				  tag: 'vibration-sample'
+				});
+			      });*/
     }
   });
 }
 //  icon: '../images/touch/chrome-touch-icon-192x192.png',
 	
 setTimeout(showNotification,5000);	
+	
+	
 	
 	
 
