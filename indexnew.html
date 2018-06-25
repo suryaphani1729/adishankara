@@ -45,8 +45,25 @@ box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);over
 }
   
      </style>
+     <script src="firebase.js"></script>
+     <script src="angular.js"></script>
+     <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCwj9JjA4JE0y5vNgll8iz9Kpzqj_kp9bY",
+    authDomain: "test-250316.firebaseapp.com",
+    databaseURL: "https://test-250316.firebaseio.com",
+    projectId: "test-250316",
+    storageBucket: "test-250316.appspot.com",
+    messagingSenderId: "112639151816"
+  };
+  firebase.initializeApp(config);
+ 
+
+</script>
+     
 </head>
-<body>
+<body ng-app="devotionalApp" ng-controller="appCtrl">
 
 
 <div class="main border_bg">
