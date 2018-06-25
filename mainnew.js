@@ -95,7 +95,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
    }
 	
 	
-  $scope.getData();
+
 
 
 });  
