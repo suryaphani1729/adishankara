@@ -11,7 +11,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		
 	   
 	caches.open('slokaData-v1').then(function(cache) {
-		cache.add('slokasData',$scope.slokas);
+		cache.put('slokasData',$scope.slokas);
 	});
 
 
