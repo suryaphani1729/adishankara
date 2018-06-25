@@ -62,7 +62,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		 var db = request.result;
 		var tx = db.transaction("itemlist", "readwrite");
 		var store = tx.objectStore("itemlist");
-		store.put({title:title,description:description, isbn: (newId+1) });
+		store.put({title:title,description:description, isbn: (++newId) });
 		tx.oncomplete = function() {
 		    console.log(db);
 		   // $scope.getData();
