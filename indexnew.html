@@ -47,6 +47,8 @@ box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);over
      </style>
      <script src="firebase.js"></script>
      <script src="angular.js"></script>
+     <script src="main.js"></script>
+     
      <script>
   // Initialize Firebase
   var config = {
@@ -68,21 +70,10 @@ box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);over
 
 <div class="main border_bg">
      <div class="board">
-           <div class="title">Title</div>
-           <div class="content">
-           Content<br><br><br>
-           sdfsd<br><br><br><br>
-            Content<br><br><br>
-           sdfsd<br><br><br><br>
-            Content<br><br><br>
-           sdfsd<br><br><br><br>
-            Content<br><br><br>
-           sdfsd<br><br><br><br>
-            Content<br><br><br>
-           sdfsd<br><br><br><br>
-            Content<br><br><br>
-           safe<br><br><br/><br/>
-           </div>
+          <div class="" ng-repeat="slokam in slokas">
+                    <div class="title">{{slokam.title}}</div>
+                     <div class="content"> {{slokam.descr}}</div>
+          </div>
      </div>
 
 </div>
