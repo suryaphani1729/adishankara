@@ -11,7 +11,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		
 	   
 	caches.open('slokaData-v1').then(function(cache) {
-		cache.put('slokasData',$scope.slokas);
+		cache.add('https://test-250316.firebaseio.com/ShankaraProject',snapshot);
 	});
 
 
