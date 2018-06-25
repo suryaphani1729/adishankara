@@ -9,7 +9,14 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 	   $scope.getData();
 	}
 	
- 
+    $scope.getData = function(){ 
+  			var tx = db.transaction("itemlist", "readwrite");
+			var store = tx.objectStore("itemlist");
+			var index = store.index("by_title");
+			var request = index.getAll();
+                  
+	              
+    };
 			
 	
 	
