@@ -30,8 +30,9 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 			  if (matching !== undefined) {
 			    // A match was found.
 			   data = matching;
-			   $scope.renderHTML();
-			  } else {
+				  if(data.length)
+			                $scope.renderHTML();
+			         else {
 			   
 				  firebase.database().ref('/ShankaraProject').once('value').then(function(snapshot) {
       						 $scope.data = snapshot.val();
@@ -49,6 +50,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		
 		
   					 });
+			         }
 			  }
 			};
 	              
