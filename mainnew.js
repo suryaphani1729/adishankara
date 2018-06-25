@@ -58,7 +58,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 			
 	
 	 var newId = 0;
-   $scope.saveLocal(title,description){
+   $scope.saveLocal = function(title,description){
 		 var db = request.result;
 		var tx = db.transaction("itemlist", "readwrite");
 		var store = tx.objectStore("itemlist");
