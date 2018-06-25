@@ -13,7 +13,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		  var db = request.result;
 		  var store = db.createObjectStore("itemlist", {keyPath: "isbn"});
 		  var titleIndex = store.createIndex("by_title", "title", {unique: true});
-		var titleIndex = store.createIndex("by_desc", "description", {unique: false});
+		var descIndex = store.createIndex("by_desc", "description", {unique: false});
 		
 		  // Populate with initial data.
 		  store.put({title: "Quarry Memories",isbn:1});
@@ -25,7 +25,32 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 			var store = tx.objectStore("itemlist");
 			var index = store.index("by_title");
 			var request = index.getAll();
-                  
+                      request.onsuccess = function() {
+			  var matching = request.result;
+			  if (matching !== undefined) {
+			    // A match was found.
+			   data = matching;
+			   $scope.renderHTML();
+			  } else {
+			   
+				  firebase.database().ref('/ShankaraProject').once('value').then(function(snapshot) {
+      						 $scope.data = snapshot.val();
+        
+						$scope.slokas = $scope.data.data1;
+	                                          
+					       angular.foreach($scope.slokas,function(slokam){
+						  
+						       $scope.saveLocal(slokam.title,slokam.description);
+						       
+					       });
+					  
+					  
+						$scope.$apply();
+		
+		
+  					 });
+			  }
+			};
 	              
     };
 			
