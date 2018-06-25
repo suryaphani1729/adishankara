@@ -12,7 +12,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		  // The database did not previously exist, so create object stores and indexes.
 		  var db = request.result;
 		  var store = db.createObjectStore("itemlist", {keyPath: "isbn"});
-		  var titleIndex = store.createIndex("by_title", "title","description", {unique: true});
+		  var titleIndex = store.createIndex("by_title", "title", {unique: true});
 		var descIndex = store.createIndex("by_desc", "description", {unique: false});
 		
 		  // Populate with initial data.
