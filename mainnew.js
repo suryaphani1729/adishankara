@@ -57,7 +57,19 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
     };
 			
 	
-	
+	 var newId = 0;
+   $scope.saveLocal(title,description){
+		 var db = request.result;
+		var tx = db.transaction("itemlist", "readwrite");
+		var store = tx.objectStore("itemlist");
+		store.put({title:title,description:description, isbn: (newId+1) });
+		tx.oncomplete = function() {
+		    console.log(db);
+		    getData();
+		    $("#key").val("");
+		};	 	   
+	   
+   };
 	
 	
 
