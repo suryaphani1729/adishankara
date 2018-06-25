@@ -65,8 +65,8 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		store.put({title:title,description:description, isbn: (newId+1) });
 		tx.oncomplete = function() {
 		    console.log(db);
-		    getData();
-		    $("#key").val("");
+		   // $scope.getData();
+		 //   $("#key").val("");
 		};	 	   
 	   
    };
