@@ -41,7 +41,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 	                                          
 					       angular.forEach($scope.slokas,function(slokam){
 						  
-						       $scope.saveLocal(slokam.title,slokam.description);
+						       $scope.saveLocal(slokam.title,slokam.descr);
 						       
 					       });
 					  
