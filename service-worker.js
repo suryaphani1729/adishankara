@@ -1,14 +1,12 @@
-var cacheName = 'adishankaraCache-9';
+var cacheName = 'adishankaraCache-1';
 var dataCacheName = 'slokaData-v1';
 
 
 var filesToCache = [
    '/adishankara/',
-  '/adishankara/index.html',
-  '/adishankara/main.js',
+  '/adishankara/indexnew.html',
+  '/adishankara/mainnew.js',
    '/adishankara/firebase.js',
-   '/adishankara/material.css',
-   '/adishankara/material.js',
    '/adishankara/angular.js'
 ];
 
