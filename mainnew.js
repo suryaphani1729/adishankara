@@ -12,7 +12,7 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 		  // The database did not previously exist, so create object stores and indexes.
 		  var db = request.result;
 		  var store = db.createObjectStore("itemlist", {keyPath: "isbn"});
-		  var titleIndex = store.createIndex("by_title", "title", {unique: true});
+		  var titleIndex = store.createIndex("by_title", ["title","description"], {unique: true});
 		var descIndex = store.createIndex("by_desc", "description", {unique: false});
 		
 		  // Populate with initial data.
@@ -57,12 +57,12 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
     };
 			
 	
-	 var newId = 0;
+	$scope.newId = 0;
    $scope.saveLocal = function(title,description){
 		 var db = request.result;
 		var tx = db.transaction("itemlist", "readwrite");
 		var store = tx.objectStore("itemlist");
-		store.put({title:title,description:description, isbn: (++newId) });
+		store.put({title:title,description: description, isbn: (++$scope.newId) });
 		tx.oncomplete = function() {
 		    console.log(db);
 		   // $scope.getData();
