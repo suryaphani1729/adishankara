@@ -57,8 +57,8 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
     };
 	 $scope.renderHTML = function(){
 		 console.log("=---------------------");
-		console.log($scope.data);
-		 
+		
+		 $scope.$apply(function(){ console.log($scope.data);   });
 		 
 	 }
 	
