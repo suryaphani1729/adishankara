@@ -29,8 +29,8 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 			  var matching = request.result;
 			  if (matching !== undefined) {
 			    // A match was found.
-			   data = matching;
-				  if(data.length)
+			   $scope.data = matching;
+				  if($scope.data.length)
 			                $scope.renderHTML();
 			         else {
 			   
