@@ -55,7 +55,12 @@ var app = angular.module('devotionalApp', []).controller("appCtrl",function($sco
 			};
 	              
     };
-			
+	 $scope.renderHTML = function(){
+		 console.log("=---------------------");
+		console.log($scope.data);
+		 
+		 
+	 }
 	
 	$scope.newId = 0;
    $scope.saveLocal = function(title,description){
